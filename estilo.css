@@ -1,0 +1,186 @@
+@font-face {
+    font-family: 'luck';
+    src: url(fontes/LuckiestGuy-Regular.ttf);
+}
+:root{
+    --cor-primaria:#417994;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'luck';
+}
+
+/* Deixa imagens flexíveis */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Herda fontes para textos de formulário */
+input, button, textarea, select {
+  font: inherit;
+}
+body{
+    position: relative;
+}
+.sucesso,.erro{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    font-size: 40px;
+    user-select: none;
+}
+.sucesso{
+    background-color: lightgreen;
+}
+.erro{
+    background-color: lightcoral;
+}
+
+.formAdd{
+    width: 600px;
+    padding: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    border: solid 1px black;
+}
+
+.formAdd>p{
+    width: 390px;
+}
+.formAdd input{
+    width: 400px;
+    padding: 10px;
+}
+.formAdd h1{
+    text-align: center;
+    width: 100%;
+}
+
+.topo{
+    height: 60px;
+    background-color: var(--cor-primaria);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.menu{
+    display: flex;
+}
+.menu li{
+    list-style-type: none;
+    border: solid 1px white;
+    margin: 0 10px;
+    padding: 4px 6px;
+}
+.menu a{
+    color: white;
+    text-decoration: none;
+}
+.menu li:hover{
+    box-shadow: 0 0 10px white;
+}
+.cards{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.cards>div{
+    border: solid 3px black;
+    border-radius: 4px;
+    background-color: rgb(41, 79, 94);
+    color: white;
+    box-shadow: 0 0 40px rgb(41, 79, 94);
+    width: 300px;
+    height: 480px;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+.cards>div img{
+    transition: 0.6s;
+    max-width: 250px;
+    max-height: 180px;
+}
+.cards>div img:hover{
+    transform: scale(1.5);
+}
+.cards>div>h1{
+    text-align: center;
+}
+.botoes{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    width: 100%;
+    height: 30px;
+}
+.botoes a{
+    height: 30px;
+    border: solid 1px white;
+    background-color: #62b4dc;
+    padding: 4px 8px;
+    color: white;
+    text-decoration: none;
+    text-shadow: 0 0 6px black;
+    transition: 0.4s;
+}
+.botoes a:hover{
+    box-shadow: 0 0 10px white;
+}
+
+.paginacao{
+    /* border: solid 1px black; */
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+.paginacao a{
+    border: solid 1px black;
+    padding: 2px 3px;
+    text-decoration: none;
+    color: black;
+}
+.ativo{
+    background-color: black !important;
+    color: white !important;
+}
+
+.txtPesquisar{
+    margin: 0 auto;
+    position: relative;
+}
+#txtPesquisar{
+    margin: 0 auto;
+}
+
+.txtPesquisar label{
+    position: absolute;
+    left: 0;
+    top: 10px;
+    pointer-events: none;
+    transition: 0.2s ease;
+}
+.txtPesquisar input:focus{
+    border-bottom-color: #417994;
+}
+.txtPesquisar input:focus ~ label,
+.txtPesquisar input:valid ~ label{
+    top: -12px;
+
+}
